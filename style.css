@@ -1,0 +1,247 @@
+/* Decimal to Binary Converter - Custom Styles */
+
+/* Root Variables */
+:root {
+    --primary-color: #4361ee;
+    --primary-light: #e6e9ff;
+    --secondary-color: #3f37c9;
+    --success-color: #4cc9f0;
+    --danger-color: #f72585;
+    --warning-color: #f8961e;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --border-radius: 12px;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    color: var(--dark-color);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Card Styling */
+.card {
+    border-radius: var(--border-radius);
+    border: none;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow) !important;
+}
+
+.card-header {
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    font-weight: 600;
+}
+
+/* Input Styling */
+.input-group-lg .form-control,
+.input-group-lg .input-group-text {
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+}
+
+#decimalInput {
+    border-radius: 8px !important;
+    border: 2px solid #e9ecef;
+    transition: var(--transition);
+}
+
+#decimalInput:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+.input-group-text {
+    background-color: var(--primary-light);
+    border-color: #e9ecef;
+}
+
+/* Button Styling */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+#clearBtn:hover {
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    color: var(--danger-color);
+}
+
+/* Binary Result Display */
+#binaryResult {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    min-height: 60px;
+    word-break: break-word;
+    line-height: 1.4;
+    padding: 0.5rem;
+}
+
+/* Example Items */
+.example-item {
+    background-color: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.example-item:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Conversion Steps */
+.conversion-step {
+    background-color: #f0f9ff;
+    border-left: 4px solid var(--success-color);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.conversion-step h6 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Input Validation States */
+.valid-input {
+    border-color: #198754 !important;
+    background-color: #d1e7dd !important;
+}
+
+.invalid-input {
+    border-color: #dc3545 !important;
+    background-color: #f8d7da !important;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.2rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    #binaryResult {
+        font-size: 1.3rem;
+        min-height: 50px;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .example-item {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 1.8rem;
+    }
+    
+    .input-group-lg .form-control,
+    .input-group-lg .input-group-text {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+    
+    #binaryResult {
+        font-size: 1.1rem;
+    }
+    
+    .d-md-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #dee2e6;
+    }
+    
+    .btn, .input-group, footer {
+        display: none !important;
+    }
+}
+
+/* Loading Animation */
+.spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 0.2em;
+}
